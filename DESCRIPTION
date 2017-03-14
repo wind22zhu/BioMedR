@@ -8,15 +8,14 @@ Author: Min-feng Zhu <wind2zhu@163.com>, Jie Dong <biomed@csu.edu.cn>,
         Dong-sheng Cao <oriental-cds@163.com>
 Maintainer: Min-feng Zhu <wind2zhu@163.com>
 License: Artistic-2.0
-SystemRequirements: Java JDK 1.7 or higher
+SystemRequirements: Java JDK 1.8 or higher
 URL: https://github.com/wind22zhu/BioMedR
 BugReports: https://github.com/wind22zhu/BioMedR/issues
 LazyData: yes
 Imports: RCurl, rjson, rcdk (>= 3.3.2), foreach, doParallel, Biostrings, GOSemSim,
         ChemmineR, fmcsR, pls, randomForest, utils, stats, graphics, methods, kohonen,
-        org.Hs.eg.db
+        org.Hs.eg.db, ChemmineOB
 Suggests: RUnit, BiocGenerics
-Enhances: ChemmineOB
 biocViews: Software, DataImport, DataRepresentation, FeatureExtraction,
         Cheminformatics, BiomedicalInformatics, Proteomics, GO,
         GraphAndNetwork, SystemsBiology
