@@ -1,7 +1,7 @@
 Package: BioMedR
 Type: Package
-Version: 0.99.22
-Date: 2016-12-30
+Version: 1.0.0
+Date: 2017-03-20
 Title: Generating Various Molecular Representations for Chemicals, Proteins, DNAs/RNAs and Their Interactions
 Description: The BioMedR package offers an R/Bioconductor package generating various molecular representations for chemicals, proteins, DNAs/RNAs and their interactions. 
 Author: Min-feng Zhu <wind2zhu@163.com>, Jie Dong <biomed@csu.edu.cn>,
