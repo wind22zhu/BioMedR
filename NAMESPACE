@@ -203,4 +203,4 @@ importFrom(graphics,symbols)
 importFrom(graphics,text)
 importFrom(graphics,title)
 importFrom(methods,as)
-importFrom(kohonen,som)
+
