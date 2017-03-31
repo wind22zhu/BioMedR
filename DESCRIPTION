@@ -1,0 +1,25 @@
+Package: BioMedR
+Type: Package
+Version: 0.99.27
+Date: 2017-03-28
+Title: Generating Various Molecular Representations for Chemicals,
+        Proteins, DNAs/RNAs and Their Interactions
+Description: The BioMedR package offers an R/Bioconductor package
+        generating various molecular representations for chemicals,
+        proteins, DNAs/RNAs and their interactions.
+Author: Min-feng Zhu <wind2zhu@163.com>, Jie Dong <biomed@csu.edu.cn>,
+        Dong-sheng Cao <oriental-cds@163.com>
+Maintainer: Min-feng Zhu <wind2zhu@163.com>
+License: Artistic-2.0
+SystemRequirements: Java JDK 1.8 or higher
+URL: https://github.com/wind22zhu/BioMedR
+BugReports: https://github.com/wind22zhu/BioMedR/issues
+LazyData: yes
+Imports: RCurl, rjson, rcdk (>= 3.3.2), foreach, doParallel,
+        Biostrings, GOSemSim, ChemmineR, fmcsR, pls, randomForest,
+        utils, stats, graphics, methods, org.Hs.eg.db, ChemmineOB
+Suggests: RUnit, BiocGenerics
+biocViews: Software, DataImport, DataRepresentation, FeatureExtraction,
+        Cheminformatics, BiomedicalInformatics, Proteomics, GO,
+        GraphAndNetwork, SystemsBiology
+NeedsCompilation: no
