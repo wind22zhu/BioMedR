@@ -93,9 +93,9 @@ Code snippet 4: example for calculating interaction descriptors
 
   * Parallelized pairwise similarity computation derived by fingerprints and maximum common substructure search within a list of small molecules.
 
-#### 4) BioMedR provide 9 kinds of descriptor classes for Proteochemometric (PCM) modeling derived by Principal Components Analysis, Factor Analysis and so on. 
+#### 4) 9 kinds of descriptor classes were provided for Proteochemometric (PCM) modeling derived by Principal Components Analysis, Factor Analysis and so on. 
 
-#### 5) By combining various types of descriptors for drugs, proteins and DNA/RNA in different methods, interaction descriptors representing protein-protein, compound-compound, DNA-DNA,  compound-DNA compound-protein and DNA-protein interactions could be conveniently generated withBioMedR, including:
+#### 5) By combining various types of descriptors for drugs, proteins and DNA/RNA in different methods, interaction descriptors representing protein-protein, compound-compound, DNA-DNA,  compound-DNA compound-protein and DNA-protein interactions could be conveniently generated with BioMedR, including:
 
   * Two types of compound-protein interaction (CPI) descriptors
   * Two types of compound-DNA interaction (CDI) descriptors 
@@ -104,15 +104,15 @@ Code snippet 4: example for calculating interaction descriptors
   * Three types of compound-compound interaction (CCI) descriptors
   * Three types of DNA-DNA interaction (DDI) descriptors
 
-#### 6) Several useful auxiliary utilities are also shipped with BioMedR:
+#### 6) 7 specific functionalities for similarity calculation or comparison, and 4 popular clustering analysis algorithms were implemented in BioMedR.
+
+#### 7) Several useful auxiliary utilities are also shipped with BioMedR:
 
   * Parallelized molecule and protein sequence retrieval from several online databases, like PubChem, ChEMBL, KEGG, DrugBank, UniProt, RCSB PDB, genBank, etc.
 
   * Loading molecules stored in SMILES/SDF files and loading protein sequences from FASTA/PDB files
 
   * Molecular file format conversion
- 
-#### 7) BioMedR implemented 7 specific functionalities for similarity calculation or comparison, 4 popular clustering analysis algorithms
 
 The computed protein sequence descriptors, molecular descriptors/fingerprints, interaction descriptors and pairwise similarities are widely used in various research fields relevant to drug disvery, primarily bioinformatics, chemoinformatics, proteochemometrics and chemogenomics.
 
