@@ -2,19 +2,25 @@
 
 ## Introduction
 
-The BioMedR package offers an R/Bioconductor package generating various molecular representations for chemicals, proteins, DNAs/RNAs and their interactions. See `vignette(‘BioMedR’)` for the comprehensive user guide.
+The BioMedR package offers an R package for generating various molecular descriptors for chemicals, proteins, DNAs/RNAs and their interactions. Also, this package realized some similarity searching methods and powerful clustering methods as well as several useful auxiliary tools, which aims at building integrated analysis pipelines from data acquisition, data checking, and descriptor calculation to modeling. See `vignette('BioMedR')` for the comprehensive user guide.
 
 ## Installation
 
 To install the BioMedR package in R, simply type
 
-    source('http://bioconductor.org/biocLite.R')
-    biocLite(‘BioMedR’)
+   ```
+   install.package('BioMedR')
+   ```
+or 
+   ```
+   install.packages('devtools')
+   library(devtools)
+   install_github('wind22zhu/BioMedR')
+   ```
+To make the BioMedR package fully functional (especially the Open Babel and rjava related functionalities), we recommend the users some tips: 
 
-To make the BioMedR package fully functional (especially the Open Babel related functionalities), we recommend the users also install the _Enhances_ packages by using:
-
-    source('http://bioconductor.org/biocLite.R')
-    biocLite('Rcpi', dependencies = c('Imports', 'Enhances'))
+[Tips](http://projects.scbdd.com/si/install_biomedr_tips.pdf)
+[Tips](http://projects.scbdd.com/si/install_rjava.pdf)
 
 Several dependencies of the BioMedR package may require some system-level libraries, check the corresponding manuals of these packages for detailed installation guides.
 
