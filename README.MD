@@ -39,7 +39,28 @@ Code snippet 2: example for calculating molecular descriptors
 > des_drug <- extrDrugALOGP(mol1)
 > print(des_drug[2,])
 ```
-
+Code snippet 3: example for calculating sequence descriptors
+```
+> require(BioMedR)
+> dna_seq <- readFASTA(system.file('dnaseq/hs.fasta', package = 'BioMedR'))
+> des_seq <- extrDNAkmer(dna_seq[[1]])
+> head(des_seq)
+```
+Code snippet 4: example for calculating interaction descriptors
+```
+> require(BioMedR)
+> # results from above snippets
+> drug1_mat <- as.matrix(des_drug[2,])
+> drug2_mat <- as.matrix(des_drug[3,])
+> seq1_mat <- t(as.matrix(des_seq))
+> # Calculating
+> des_CCI1 <- getCCI(drug1_mat, drug2_mat, type='combine')
+> des_CDI1 <- getCDI(drug1_mat, seq1_mat, type='tensorprod')
+> # Show result
+> colnames(des_CCI1) = paste('CCI', 1:dim(des_CCI1)[2], sep = '_')
+> rownames(des_CCI1) = paste('ID', 1:dim(des_CCI1)[1], sep = '_')
+> print(des_CCI1)
+```
 
 ## Features
 
