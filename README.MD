@@ -105,6 +105,9 @@ Several useful auxiliary utilities are also shipped with BioMedR:
 
 The computed protein sequence descriptors, molecular descriptors/fingerprints, interaction descriptors and pairwise similarities are widely used in various research fields relevant to drug disvery, primarily bioinformatics, chemoinformatics, proteochemometrics and chemogenomics.
 
+## Publication
+Jie Dong, Min-Feng Zhu, Dong-Sheng Cao, et al. BioMedR: an R/CRAN package linking the chemical, protein and DNA/RNA space in view of molecular representation.*Journal of Cheminformatics*, submitted.
+
 ## Contact
 
 The BioMedR package is developed by Computational Biology and Drug Design Group, Central South University, China.
