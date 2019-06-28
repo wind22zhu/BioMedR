@@ -70,7 +70,7 @@ Code snippet 4: example for calculating interaction descriptors
 
 
 ### BioMedR implemented and integrated the state-of-the-art Chem/Bio molecular descriptors and various data modeling analysis functionalities with R. 
-#### 1)For protein sequences, the BioMedR package could
+#### 1) For protein sequences, the BioMedR package could
 
   * Calculate six protein descriptor groups composed of fourteen types of commonly used structural and physicochemical descriptors that include 9920 descriptors.
 
@@ -111,6 +111,8 @@ Code snippet 4: example for calculating interaction descriptors
   * Loading molecules stored in SMILES/SDF files and loading protein sequences from FASTA/PDB files
 
   * Molecular file format conversion
+ 
+#### 7) BioMedR implemented 7 specific functionalities for similarity calculation or comparison, 4 popular clustering analysis algorithms
 
 The computed protein sequence descriptors, molecular descriptors/fingerprints, interaction descriptors and pairwise similarities are widely used in various research fields relevant to drug disvery, primarily bioinformatics, chemoinformatics, proteochemometrics and chemogenomics.
 
