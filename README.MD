@@ -31,6 +31,15 @@ Code snippet 1: example for getting molecules
 > SMILES <- BMgetDrug(id, 'drugbank', 'smile')
 > print(SMILES[1])
  ```
+Code snippet 2: example for calculating molecular descriptors
+```
+> require(BioMedR)
+> smi_f <- system.file('vignettedata/test.smi', package = 'BioMedR')
+> mol1 <- readMolFromSmi(smi_f, type = 'mol')
+> des_drug <- extrDrugALOGP(mol1)
+> print(des_drug[2,])
+```
+
 
 ## Features
 
