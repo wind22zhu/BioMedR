@@ -69,22 +69,21 @@ Code snippet 4: example for calculating interaction descriptors
 ## Features
 
 
-1) BioMedR implemented and integrated the state-of-the-art protein sequence descriptors and molecular descriptors/fingerprints with R. For protein sequences, the BioMedR package could
+### BioMedR implemented and integrated the state-of-the-art Chem/Bio molecular descriptors and various data modeling analysis functionalities with R. 
+#### 1)For protein sequences, the BioMedR package could
 
   * Calculate six protein descriptor groups composed of fourteen types of commonly used structural and physicochemical descriptors that include 9920 descriptors.
 
-  * Calculate six types of generalized scales-based descriptors derived by various dimensionality reduction methods for proteochemometric (PCM) modeling.
-
   * Parallellized pairwise similarity computation derived by protein sequence alignment and Gene Ontology (GO) semantic similarity measures within a list of proteins.
 
-2) For small molecules, the BioMedR package could:
+#### 2) For small molecules, the BioMedR package could:
 
   * Calculate 307 molecular descriptors (2D/3D), including constitutional, topological, geometrical, and electronic descriptors, etc.
 
   * Calculate more than ten types of molecular fingerprints, including E-state fingerprints, MACCS keys, etc., and parallelized chemical similarity search.
  
 
-3) For DNA/RNA molecules, the BioMedR package could:
+#### 3) For DNA/RNA molecules, the BioMedR package could:
 
   * Calculate three nucleic acid composition features describing the local sequence information by means of kmers (subsequences of DNA sequences).
 
@@ -94,9 +93,9 @@ Code snippet 4: example for calculating interaction descriptors
 
   * Parallelized pairwise similarity computation derived by fingerprints and maximum common substructure search within a list of small molecules.
 
-4) BioMedR provide 9 kinds of descriptor classes for Proteochemometric (PCM) modeling derived by Principal Components Analysis, Factor Analysis and so on. 
+#### 4) BioMedR provide 9 kinds of descriptor classes for Proteochemometric (PCM) modeling derived by Principal Components Analysis, Factor Analysis and so on. 
 
-5) By combining various types of descriptors for drugs, proteins and DNA/RNA in different methods, interaction descriptors representing protein-protein, compound-compound, DNA-DNA,  compound-DNA compound-protein and DNA-protein interactions could be conveniently generated withBioMedR, including:
+### 5) By combining various types of descriptors for drugs, proteins and DNA/RNA in different methods, interaction descriptors representing protein-protein, compound-compound, DNA-DNA,  compound-DNA compound-protein and DNA-protein interactions could be conveniently generated withBioMedR, including:
 
   * Two types of compound-protein interaction (CPI) descriptors
   * Two types of compound-DNA interaction (CDI) descriptors 
@@ -105,7 +104,7 @@ Code snippet 4: example for calculating interaction descriptors
   * Three types of compound-compound interaction (CCI) descriptors
   * Three types of DNA-DNA interaction (DDI) descriptors
 
-6) Several useful auxiliary utilities are also shipped with BioMedR:
+### 6) Several useful auxiliary utilities are also shipped with BioMedR:
 
   * Parallelized molecule and protein sequence retrieval from several online databases, like PubChem, ChEMBL, KEGG, DrugBank, UniProt, RCSB PDB, genBank, etc.
 
