@@ -2,6 +2,7 @@
 ![GitHub watchers](https://img.shields.io/github/watchers/wind22zhu/BioMedR.svg?style=social)
 ![CRAN/METACRAN](https://img.shields.io/cran/v/BioMedR.svg?color=green)
 ![GitHub repo size](https://img.shields.io/github/repo-size/wind22zhu/BioMedR.svg)
+![CRAN/METACRAN](https://img.shields.io/cran/l/BioMedR.svg?color=red&style=plastic)
 
 ## Introduction
 
