@@ -95,7 +95,7 @@ Code snippet 4: example for calculating interaction descriptors
 
 #### 4) BioMedR provide 9 kinds of descriptor classes for Proteochemometric (PCM) modeling derived by Principal Components Analysis, Factor Analysis and so on. 
 
-### 5) By combining various types of descriptors for drugs, proteins and DNA/RNA in different methods, interaction descriptors representing protein-protein, compound-compound, DNA-DNA,  compound-DNA compound-protein and DNA-protein interactions could be conveniently generated withBioMedR, including:
+#### 5) By combining various types of descriptors for drugs, proteins and DNA/RNA in different methods, interaction descriptors representing protein-protein, compound-compound, DNA-DNA,  compound-DNA compound-protein and DNA-protein interactions could be conveniently generated withBioMedR, including:
 
   * Two types of compound-protein interaction (CPI) descriptors
   * Two types of compound-DNA interaction (CDI) descriptors 
@@ -104,7 +104,7 @@ Code snippet 4: example for calculating interaction descriptors
   * Three types of compound-compound interaction (CCI) descriptors
   * Three types of DNA-DNA interaction (DDI) descriptors
 
-### 6) Several useful auxiliary utilities are also shipped with BioMedR:
+#### 6) Several useful auxiliary utilities are also shipped with BioMedR:
 
   * Parallelized molecule and protein sequence retrieval from several online databases, like PubChem, ChEMBL, KEGG, DrugBank, UniProt, RCSB PDB, genBank, etc.
 
