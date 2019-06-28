@@ -23,6 +23,14 @@ To make the BioMedR package fully functional (especially the Open Babel and rjav
 [>>Tips 2](http://projects.scbdd.com/si/install_rjava.pdf)
 
 Several dependencies of the BioMedR package may require some system-level libraries, check the corresponding manuals of these packages for detailed installation guides.
+## Examples
+Code snippet 1: example for getting molecules
+ ```
+> require('BioMedR')
+> id <- c('DB00859', 'DB00860')
+> SMILES <- BMgetDrug(id, 'drugbank', 'smile')
+> print(SMILES[1])
+ ```
 
 ## Features
 
@@ -66,14 +74,6 @@ Several useful auxiliary utilities are also shipped with BioMedR:
   * Molecular file format conversion
 
 The computed protein sequence descriptors, molecular descriptors/fingerprints, interaction descriptors and pairwise similarities are widely used in various research fields relevant to drug disvery, primarily bioinformatics, chemoinformatics, proteochemometrics and chemogenomics.
-
-## Links
-
-  * Bioconductor Page: http://bioconductor.org/packages/release/bioc/html/BioMedR.html
-
-  * Track Devel: https://github.com/wind22zhu/BioMedR
-
-  * Report Bugs: https://github.com/wind22zhu/BioMedR/issues
 
 ## Contact
 
