@@ -15,7 +15,7 @@ or
    ```
    install.packages('devtools')
    library(devtools)
-   install_github('wind22zhu/BioMedR')
+   install_github('wind22zhu/BioMedR', INSTALL_opts="--no-multiarch")
    ```
 To make the BioMedR package fully functional (especially the Open Babel and rjava related functionalities), we recommend the users some tips: 
 
