@@ -19,8 +19,8 @@ or
    ```
 To make the BioMedR package fully functional (especially the Open Babel and rjava related functionalities), we recommend the users some tips: 
 
-[Tips](http://projects.scbdd.com/si/install_biomedr_tips.pdf)
-[Tips](http://projects.scbdd.com/si/install_rjava.pdf)
+[>>Tips 1<<](http://projects.scbdd.com/si/install_biomedr_tips.pdf)
+[>>Tips 2<<](http://projects.scbdd.com/si/install_rjava.pdf)
 
 Several dependencies of the BioMedR package may require some system-level libraries, check the corresponding manuals of these packages for detailed installation guides.
 
