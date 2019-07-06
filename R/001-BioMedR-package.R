@@ -8,7 +8,7 @@
 #' which explains the functionalities included in this package in detail.
 #' The BioMedR package is developed by Computational Biology and 
 #' Drug Design (CBDD) Group, Central South University 
-#' (\url{http://cbdd.csu.edu.cn/}).
+#' (\url{http://www.scbdd.com/}).
 #' 
 #' \tabular{ll}{ Package: \tab BioMedR\cr Type: \tab Package\cr
 #' Version: \tab Release 3\cr License: \tab Artistic-2.0\cr }

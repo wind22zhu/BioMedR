@@ -28,15 +28,14 @@
 #' @export extrDrugAP
 #' 
 #' @examples
+#' 
 #' data(sdfbcl)
-#'
 #' apbcl <- convSDFtoAP(sdfbcl)
 #' mol <- extrDrugAP(x = apbcl, descnames = 1024)
 #' 
 extrDrugAP <- function (x, descnames = 1024) {
   
     if (length(descnames) == 1) {
-        data(apfp)
         descnames <- as.character(apfp$AP)[1:descnames]
     }	
     if (class(x)=="APset") { 

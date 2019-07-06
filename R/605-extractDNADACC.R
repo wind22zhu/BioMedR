@@ -12,7 +12,7 @@
 #' @param nlag an integer larger than or equal to 0 and less than or equal to L-2 (L means the length 
 #'             of the shortest DNA sequence in the dataset). It represents the distance between two dinucleotides.
 #'
-#'  @param normaliztion with this option, the final feature vector will be normalized based
+#' @param normaliztion with this option, the final feature vector will be normalized based
 #'                  on the total occurrences of all kmers. Therefore, the elements in the feature vectors 
 #'                  represent the frequencies of kmers. The default value of this parameter is False.
 #' 

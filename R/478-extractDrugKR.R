@@ -26,10 +26,11 @@
 #' @seealso \link{extrDrugKRComplete}
 #' 
 #' @examples
+#' \donttest{
 #' smi = system.file('vignettedata/test.smi', package = 'BioMedR')
 #' mol = readMolFromSmi(smi, type = 'mol')
 #' fp  = extrDrugKR(mol)
-#' head(fp)
+#' head(fp)}
 #' 
 
 extrDrugKR = function (molecules, silent = TRUE) {

@@ -84,9 +84,9 @@ BMgetProt = function (id,
 #' @importFrom RCurl getURLAsynchronous
 #' 
 #' @references
-#' UniProt. \url{http://www.uniprot.org/}
+#' UniProt. \url{https://www.uniprot.org/}
 #' 
-#' UniProt REST API Documentation. \url{http://www.uniprot.org/faq/28}
+#' UniProt REST API Documentation. \url{https://www.uniprot.org/faq/28}
 #' 
 #' @examples
 #' \donttest{
@@ -100,7 +100,7 @@ BMgetProtFASTAUinProt = function (id, parallel = 5) {
   # example id:  P00750
   # example url: http://www.uniprot.org/uniprot/P00750.fasta
   
-  fastaURL = paste0('http://www.uniprot.org/uniprot/', id, '.fasta')
+  fastaURL = paste0('https://www.uniprot.org/uniprot/', id, '.fasta')
   
   fastaTxt = getURLAsynchronous(url = fastaURL, perform = parallel)
   
@@ -117,9 +117,9 @@ BMgetProtFASTAUinProt = function (id, parallel = 5) {
 #' @export BMgetProtSeqUniProt
 #' 
 #' @references
-#' UniProt. \url{http://www.uniprot.org/}
+#' UniProt. \url{https://www.uniprot.org/}
 #' 
-#' UniProt REST API Documentation. \url{http://www.uniprot.org/faq/28}
+#' UniProt REST API Documentation. \url{https://www.uniprot.org/faq/28}
 #' 
 #' @examples
 #' \donttest{
@@ -131,7 +131,7 @@ BMgetProtFASTAUinProt = function (id, parallel = 5) {
 BMgetProtSeqUniProt = function (id, parallel = 5) {
   
   # example id:  P00750
-  # example url: http://www.uniprot.org/uniprot/P00750.fasta
+  # example url: https://www.uniprot.org/uniprot/P00750.fasta
   
   fastaTxt = BMgetProtFASTAUinProt(id, parallel)
   
@@ -244,7 +244,7 @@ BMgetProtPDBRCSBPDB = function (id, parallel = 5) {
   # example id : 4HHB
   # example url: http://www.rcsb.org/pdb/files/4HHB.pdb
   
-  pdbURL = paste0('http://www.rcsb.org/pdb/files/', id, '.pdb')
+  pdbURL = paste0('http://files.rcsb.org/view/', id, '.pdb')
   
   pdbTxt = getURLAsynchronous(url = pdbURL, perform = parallel)
   

@@ -16,7 +16,7 @@
 #' @param cutoff The minimum similarity value an item must have to another item in order to be included 
 #'               in that items neighbor list. This parameter takes precedence over \code{numNbrs}. This 
 #'               parameter allows to obtain tighter clustering results.               
-#'  @param ... These parameters will be passed into the distance function used
+#' @param ... These parameters will be passed into the distance function used
 #' 
 #' @return The return value is a list with the following components:
 #' \itemize{

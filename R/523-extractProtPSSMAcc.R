@@ -38,7 +38,8 @@
 #' \donttest{
 #' x = readFASTA(system.file('protseq/P00750.fasta', package = 'BioMedR'))[[1]]
 #' dbpath = tempfile('tempdb', fileext = '.fasta')
-#' invisible(file.copy(from = system.file('protseq/Plasminogen.fasta', package = 'BioMedR'), to = dbpath))
+#' invisible(file.copy(from = system.file('protseq/Plasminogen.fasta', 
+#' package = 'BioMedR'), to = dbpath))
 #' pssmmat = extrProtPSSM(seq = x, database.path = dbpath)
 #' pssmacc = extrProtPSSMAcc(pssmmat, lag = 3)
 #' tail(pssmacc)

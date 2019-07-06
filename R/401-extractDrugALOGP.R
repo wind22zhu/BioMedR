@@ -73,7 +73,7 @@ extrDrugALOGP = function (molecules, silent = TRUE) {
 #' @details Calculates the sum of the atomic polarizabilities 
 #' (including implicit hydrogens) descriptor. 
 #' Polarizabilities are taken from 
-#' \url{http://www.sunysccc.edu/academic/mst/ptable/p-table2.htm}.
+#' \url{https://doi.org/10.1063/1.459444}.
 #' 
 #' @keywords extrDrugApol Apol
 #'
@@ -114,7 +114,7 @@ extrDrugApol = function (molecules, silent = TRUE) {
 #' @details This descriptor calculates the sum of the absolute value of the 
 #' difference between atomic polarizabilities of all bonded atoms 
 #' in the molecule (including implicit hydrogens) with polarizabilities 
-#' taken from \url{http://www.sunysccc.edu/academic/mst/ptable/p-table2.htm}.
+#' taken from \url{https://doi.org/10.1063/1.459444}.
 #' This descriptor assumes 2-centered bonds.
 #' 
 #' @keywords extrDrugBPol BPol Polarizability
@@ -198,7 +198,7 @@ extrDrugHBondAcceptorCount = function (molecules, silent = TRUE) {
 #' 
 #' @details This descriptor calculates the number of hydrogen bond donors using 
 #' a slightly simplified version of the PHACIR atom types 
-#' (\url{http://www.chemie.uni-erlangen.de/model2001/abstracts/rester.html}). 
+#' (\url{https://www.ncbi.nlm.nih.gov/pubmed/12653513}). 
 #' The following groups are counted as hydrogen bond donors:
 #' \itemize{
 #' \item Any-OH where the formal charge of the oxygen is non-negative 
@@ -240,7 +240,7 @@ extrDrugHBondDonorCount = function (molecules, silent = TRUE) {
 #' @description Descriptor that Calculates the Number Failures of the Lipinski's Rule Of Five
 #'  
 #' @details This descriptor calculates the number failures of the Lipinski's Rule Of Five:
-#' \url{http://en.wikipedia.org/wiki/Lipinski\%27s_Rule_of_Five}.
+#' \url{https://www.ncbi.nlm.nih.gov/pubmed/24981612}.
 #' 
 #' @keywords extrDrugRuleOfFive Lipinski Rule Five
 #'
