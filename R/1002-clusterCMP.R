@@ -72,9 +72,9 @@
 #' fpbcl <- convAPtoFP(apbcl)
 #' clusters <- clusterCMP(db = apbcl, cutoff = c(0.5, 0.85))
 #' clusters2 <- clusterCMP(fpbcl, cutoff = c(0.5, 0.7), method = "Tversky") 
-#' clusters <- clusterCMP(apbcl, cutoff = 0.65, save.distances = "distmat.rda")
-#' load("distmat.rda")
-#' clusters <- clusterCMP(apbcl, cutoff = 0.60, use.distances = distmat)
+#' # clusters <- clusterCMP(apbcl, cutoff = 0.65, save.distances = "distmat.rda")
+#' # load("distmat.rda")
+#' # clusters <- clusterCMP(apbcl, cutoff = 0.60, use.distances = distmat)
 #' 
 clusterCMP <- function (db, cutoff, is.similarity = TRUE, save.distances = FALSE,
                         use.distances = NULL, quiet = FALSE, ...) {

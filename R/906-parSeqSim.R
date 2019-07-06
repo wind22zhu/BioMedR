@@ -39,9 +39,6 @@
 #' @param protlist A length \code{n} list containing \code{n} protein sequences,
 #' each component of the list is a character string, storing one protein sequence.
 #' Unknown sequences should be represented as \code{''}.
-#' @param cores Integer. The number of CPU cores to use for parallel execution,
-#'        default is \code{2}. Users could use the \code{detectCores()} function
-#'        in the \code{parallel} package to see how many cores they could use.
 #' @param type Type of alignment, default is \code{'local'},
 #' could be \code{'global'} or \code{'local'},
 #' where \code{'global'} represents Needleman-Wunsch global alignment;
@@ -71,8 +68,6 @@
 #' # and might produce unpredictable results in some environments
 #'
 #' require(Biostrings)
-#' require(foreach)
-#' require(doParallel)
 #'
 #' s1 = readFASTA(system.file('protseq/P00750.fasta', package = 'BioMedR'))[[1]]
 #' s2 = readFASTA(system.file('protseq/P08218.fasta', package = 'BioMedR'))[[1]]
@@ -80,7 +75,7 @@
 #' s4 = readFASTA(system.file('protseq/P20160.fasta', package = 'BioMedR'))[[1]]
 #' s5 = readFASTA(system.file('protseq/Q9NZP8.fasta', package = 'BioMedR'))[[1]]
 #' plist = list(s1, s2, s3, s4, s5)
-#' psimmat = parSeqSim(plist, cores = 2, type = 'local', submat = 'BLOSUM62')
+#' psimmat = parSeqSim(plist, type = 'local', submat = 'BLOSUM62')
 #' print(psimmat)
 #' s11 = readFASTA(system.file('dnaseq/hs.fasta', package = 'BioMedR'))[[1]]
 #' s21 = readFASTA(system.file('dnaseq/hs.fasta', package = 'BioMedR'))[[2]]
@@ -88,12 +83,12 @@
 #' s41 = readFASTA(system.file('dnaseq/hs.fasta', package = 'BioMedR'))[[4]]
 #' s51 = readFASTA(system.file('dnaseq/hs.fasta', package = 'BioMedR'))[[5]]
 #' plist1 = list(s11, s21, s31, s41, s51)
-#' psimmat1 = parSeqSim(plist1, cores = 2, type = 'local', submat = 'BLOSUM62')
+#' psimmat1 = parSeqSim(plist1, type = 'local', submat = 'BLOSUM62')
 #' print(psimmat1)
 
-parSeqSim = function (protlist, cores = 2, type = 'local', submat = 'BLOSUM62') {
-
-  doParallel::registerDoParallel(cores)
+parSeqSim = function (protlist, type = 'local', submat = 'BLOSUM62') {
+  
+  # doParallel::registerDoParallel(cores)
 
   # generate lower matrix index
   idx = combn(1:length(protlist), 2)
@@ -103,20 +98,21 @@ parSeqSim = function (protlist, cores = 2, type = 'local', submat = 'BLOSUM62') 
 
   seqsimlist = vector('list', ncol(idx))
 
-  `%mydopar%` = foreach::`%dopar%`
+  # `%mydopar%` = foreach::`%dopar%`
 
-  seqsimlist <- foreach::foreach(i = 1:length(seqsimlist), .errorhandling = 'pass') %mydopar% {
-    tmp <- .seqPairSim(rev(idx[, i]), protlist = protlist, type = type, submat = submat)
+  # seqsimlist <- foreach::foreach(i = 1:length(seqsimlist), .errorhandling = 'pass') %mydopar% {
+  #   tmp <- .seqPairSim(rev(idx[, i]), protlist = protlist, type = type, submat = submat)
+  # }
+  for (i in 1:length(seqsimlist)) {
+    seqsimlist[[i]] = .seqPairSim(rev(idx[, i]), protlist = protlist, type = type, submat = submat)
   }
-
   # convert list to matrix
   seqsimmat = matrix(0, length(protlist), length(protlist))
   for (i in 1:length(seqsimlist)) seqsimmat[idx[2, i], idx[1, i]] = seqsimlist[[i]]
   seqsimmat[upper.tri(seqsimmat)] = t(seqsimmat)[upper.tri(t(seqsimmat))]
   diag(seqsimmat) = 1
-
+  
   return(seqsimmat)
-
 }
 
 #' Protein/DNA Sequence Alignment for Two Protein Sequences

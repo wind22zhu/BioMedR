@@ -47,17 +47,12 @@
 #' @references 
 #' ...
 #' 
-#' @examples 
+#' @examples
 #' 
 #' data(sdfbcl)
-#' 
-#' plotStructure(sdfbcl[[1]])                                                                                                                                                                                                                                        
-#'  
+#' plotStructure(sdfbcl[[1]])
 #' plotStructure(sdf = sdfbcl[[2]], atomcex = 1.2, atomnum = FALSE, 
-#'              no_print_atoms = c("C"), noHbonds = TRUE, bondspacer = 0.08)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
-#'                                                                                                                                                                                               
-#'                                                                                               
-                
+#'               no_print_atoms = c("C"), noHbonds = TRUE, bondspacer = 0.08)
 
 plotStructure <- function (sdf, atomcex = 1.2, atomnum = FALSE,
                            no_print_atoms = c("C"), noHbonds = TRUE,
