@@ -40,6 +40,9 @@
 #' each component of the list is a character string, 
 #' storing one protein sequence. Unknown sequences should be represented as 
 #' \code{''}.
+#' @param cores Integer. The number of CPU cores to use for parallel execution, 
+#'        default is \code{2}. Users could use the \code{detectCores()} function
+#'        in the \code{parallel} package to see how many cores they could use.
 #' @param type Type of alignment, default is \code{'local'}, 
 #' could be \code{'global'} or \code{'local'}, 
 #' where \code{'global'} represents Needleman-Wunsch global alignment; 
@@ -73,13 +76,13 @@
 #' s4 = readFASTA(system.file('protseq/P20160.fasta', package = 'BioMedR'))[[1]]
 #' s5 = readFASTA(system.file('protseq/Q9NZP8.fasta', package = 'BioMedR'))[[1]]
 #' plist = list(s1, s2, s3, s4, s5)
-#' psimmat = calcParProtSeqSim(plist, type = 'local', submat = 'BLOSUM62')
+#' psimmat = calcParProtSeqSim(plist, cores = 2, type = 'local', submat = 'BLOSUM62')
 #' 
 
-calcParProtSeqSim = function (protlist, 
+calcParProtSeqSim = function (protlist, cores = 2, 
                               type = 'local', submat = 'BLOSUM62') {
 
-    # doParallel::registerDoParallel(cores)
+    doParallel::registerDoParallel(cores)
 
     # generate lower matrix index
     idx = combn(1:length(protlist), 2)
@@ -89,12 +92,8 @@ calcParProtSeqSim = function (protlist,
 
     seqsimlist = vector('list', ncol(idx))
 
-    # seqsimlist <- foreach (i = 1:length(seqsimlist), .errorhandling = 'pass') %dopar% {
-    #    tmp <- .calcSeqPairSim(rev(idx[, i]), protlist = protlist, type = type, submat = submat)
-    # }
-    
-    for (i in 1:length(seqsimlist)) {
-      seqsimlist[[i]] <- .calcSeqPairSim(rev(idx[, i]), protlist = protlist, type = type, submat = submat)
+    seqsimlist <- foreach (i = 1:length(seqsimlist), .errorhandling = 'pass') %dopar% {
+        tmp <- .calcSeqPairSim(rev(idx[, i]), protlist = protlist, type = type, submat = submat)
     }
 
     # convert list to matrix
