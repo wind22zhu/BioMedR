@@ -15,11 +15,11 @@ BugReports: https://github.com/wind22zhu/BioMedR/issues
 LazyData: yes
 Imports: RCurl, rjson, rcdk (>= 3.3.2), Biostrings, GOSemSim, MASS,
         ChemmineOB, ChemmineR, fmcsR, pls, randomForest, utils, stats,
-        graphics, methods, org.Hs.eg.db
+        graphics, doParallel, methods, org.Hs.eg.db
 Suggests: RUnit, BiocGenerics
 biocViews: Software, DataImport, DataRepresentation, FeatureExtraction,
         Cheminformatics, BiomedicalInformatics, Proteomics, GO,
         GraphAndNetwork, SystemsBiology
 NeedsCompilation: no
 RoxygenNote: 6.1.1
-Packaged: 2019-07-15 16:16:22 UTC; root
+Packaged: 2019-07-17 15:52:28 UTC; root
