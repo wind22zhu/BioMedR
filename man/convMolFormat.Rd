@@ -193,7 +193,7 @@ The supported formats include:
             }
 }
 \examples{
-sdf = system.file('sysdata/OptAA3d.sdf', package = 'Rcpi')
+sdf = system.file('sysdata/OptAA3d.sdf', package = 'BioMedR')
 # SDF to SMILES
 \donttest{
 convMolFormat(infile = sdf, outfile = 'aa.smi',

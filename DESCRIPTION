@@ -22,4 +22,4 @@ biocViews: Software, DataImport, DataRepresentation, FeatureExtraction,
         GraphAndNetwork, SystemsBiology
 NeedsCompilation: no
 RoxygenNote: 6.1.1
-Packaged: 2019-07-17 15:52:28 UTC; root
+Packaged: 2019-07-19 15:47:32 UTC; root

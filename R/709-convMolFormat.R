@@ -21,7 +21,8 @@
 #'
 #' @aliases convMolFormat
 #'
-#' @author Nan Xiao <\url{https://nanx.me}>
+#' @author Min-feng Zhu <\email{wind2zhu@@163.com}>, 
+#'         Nan Xiao <\url{http://r2s.name}>
 #'
 #' @export convMolFormat
 #'
@@ -187,7 +188,7 @@
 #'             }
 #'
 #' @examples
-#' sdf = system.file('sysdata/OptAA3d.sdf', package = 'Rcpi')
+#' sdf = system.file('sysdata/OptAA3d.sdf', package = 'BioMedR')
 #' # SDF to SMILES
 #' \donttest{
 #' convMolFormat(infile = sdf, outfile = 'aa.smi',
