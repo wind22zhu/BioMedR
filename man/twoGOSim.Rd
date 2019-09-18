@@ -16,13 +16,7 @@ length = 1: the Entrez Gene ID.}
 
 \item{type}{Input type of id1 and id2, \code{'go'} for GO Terms, \code{'gene'} for gene ID.}
 
-\item{ont}{Default is \code{'MF'}, could be one of \code{'MF'}, \code{'BP'}, or \code{'CC'} subontologies.}
-
-\item{organism}{Default is \code{'human'}, could be one of \code{'anopheles'}, \code{'arabidopsis'}, \code{'bovine'}, \code{'canine'},
-\code{'chicken'}, \code{'chimp'}, \code{'coelicolor'}, \code{'ecolik12'},
-\code{'ecsakai'}, \code{'fly'}, \code{'human'}, \code{'malaria'},
-\code{'mouse'}, \code{'pig'}, \code{'rat'}, \code{'rhesus'},
-\code{'worm'}, \code{'xenopus'}, \code{'yeast'} or \code{'zebrafish'}.}
+\item{semData}{GOSemSimDATA object}
 
 \item{measure}{Default is \code{'Resnik'}, could be one of \code{'Resnik'}, \code{'Lin'}, \code{'Rel'}, \code{'Jiang'} or \code{'Wang'}.}
 
@@ -50,13 +44,15 @@ require(org.Hs.eg.db)
 # by GO terms
 go1 = c("GO:0004022", "GO:0004024", "GO:0004023")
 go2 = c("GO:0009055", "GO:0020037")
-gsim1 = twoGOSim(go1, go2, type = 'go', ont = 'MF', measure = 'Wang')
+d = GOSemSim::godata('org.Hs.eg.db', ont = 'MF', computeIC = FALSE)
+gsim1 = twoGOSim(go1, go2, type = 'go', semData = d, measure = 'Wang')
 print(gsim1)
 
 # by Entrez gene id
 gene1 = '241'
 gene2 = '251'
-gsim2 = twoGOSim(gene1, gene2, type = 'gene', ont = 'BP', measure = 'Lin')
+d = GOSemSim::godata('org.Hs.eg.db', ont = 'MF', computeIC = TRUE)
+gsim2 = twoGOSim(gene1, gene2, type = 'gene', semData = d,  measure = 'Wang')
 print(gsim2)}
 }
 \seealso{
