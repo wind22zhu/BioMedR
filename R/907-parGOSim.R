@@ -1,4 +1,4 @@
-.goPairSim = function (twoid, golist = golist, ont = ont, organism = organism, measure = measure, combine = combine) {
+.goPairSim = function (twoid, golist = golist, semData = semData, measure = measure, combine = combine) {
 
   id1 = twoid[1]
   id2 = twoid[2]
@@ -16,8 +16,7 @@
     gid2 = as.character(golist[[id2]][id2good])
 
     res = try(suppressWarnings(GOSemSim::mgoSim(gid1, gid2,
-                                                ont = ont,
-                                                organism = organism,
+                                                semData = semData, 
                                                 measure = measure,
                                                 combine = combine)),
               silent = TRUE)
@@ -43,13 +42,8 @@
 #'
 #' @param golist A character vector, each component contains
 #' a character vector of GO terms or one Entrez Gene ID.
+#' @param semData GOSemSimDATA object
 #' @param type Input type of \code{golist}, \code{'go'} for GO Terms, \code{'gene'} for gene ID.
-#' @param ont Default is \code{'MF'}, could be one of \code{'MF'}, \code{'BP'}, or \code{'CC'} subontologies.
-#' @param organism Default is \code{'human'}, could be one of \code{'anopheles'}, \code{'arabidopsis'}, \code{'bovine'}, \code{'canine'},
-#' \code{'chicken'}, \code{'chimp'}, \code{'coelicolor'}, \code{'ecolik12'},
-#' \code{'ecsakai'}, \code{'fly'}, \code{'human'}, \code{'malaria'},
-#' \code{'mouse'}, \code{'pig'}, \code{'rat'}, \code{'rhesus'},
-#' \code{'worm'}, \code{'xenopus'}, \code{'yeast'} or \code{'zebrafish'}.
 #' @param measure Default is \code{'Resnik'}, could be one of \code{'Resnik'}, \code{'Lin'}, \code{'Rel'}, \code{'Jiang'} or \code{'Wang'}.
 #' @param combine Default is \code{'BMA'}, could be one of \code{'max'}, \code{'average'}, \code{'rcmax'} or \code{'BMA'}
 #' for combining semantic similarity scores of multiple GO terms associated with protein.
@@ -82,20 +76,22 @@
 #' go2 = c('GO:0005515', 'GO:0005634', 'GO:0005681', 'GO:0008380', 'GO:0031202')  # BCAS2
 #' go3 = c('GO:0003735', 'GO:0005622', 'GO:0005840', 'GO:0006412')  # PDE4DIP
 #' glist = list(go1, go2, go3)
-#' gsimmat1 = parGOSim(glist, type = 'go', ont = 'CC')
+#' d = godata('org.Hs.eg.db', ont="MF", computeIC = TRUE)
+#' gsimmat1 = parGOSim(glist, type = 'go', semData = d, measure = 'Wang')
 #' print(gsimmat1)
 #'
 #' # by Entrez gene id
 #' genelist = list(c('150', '151', '152', '1814', '1815', '1816'))
-#' gsimmat2 = parGOSim(genelist, type = 'gene')
+#' d = godata('org.Hs.eg.db', ont="CC", computeIC = TRUE)
+#' gsimmat2 = parGOSim(genelist, type = 'gene', semData = d)
 #' print(gsimmat2)}
 
 parGOSim = function (golist, type = c('go', 'gene'),
-                     ont = 'MF', organism = 'human',
+                     semData, 
                      measure = 'Resnik', combine = 'BMA') {
 
   if ( type == 'gene' ) {
-    gosimmat = GOSemSim::mgeneSim(unlist(golist), ont = ont, organism = organism, measure = measure, combine = combine, verbose = FALSE)
+    gosimmat = GOSemSim::mgeneSim(unlist(golist), semData = semData, measure = measure, combine = combine, verbose = FALSE)
   }
 
   if ( type == 'go' ) {
@@ -107,7 +103,7 @@ parGOSim = function (golist, type = c('go', 'gene'),
     gosimlist = vector('list', ncol(idx))
 
     for ( i in 1:ncol(idx) ) {
-      gosimlist[[i]] = .goPairSim(rev(idx[, i]), golist = golist, ont = ont, organism = organism, measure = measure, combine = combine)
+      gosimlist[[i]] = .goPairSim(rev(idx[, i]), golist = golist, semData = semData, measure = measure, combine = combine)
     }
 
     # convert list to matrix
@@ -133,13 +129,8 @@ parGOSim = function (golist, type = c('go', 'gene'),
 #' length = 1: the Entrez Gene ID.
 #' @param id2 A character vector. length > 1: each element is a GO term;
 #' length = 1: the Entrez Gene ID.
+#' @param semData GOSemSimDATA object
 #' @param type Input type of id1 and id2, \code{'go'} for GO Terms, \code{'gene'} for gene ID.
-#' @param ont Default is \code{'MF'}, could be one of \code{'MF'}, \code{'BP'}, or \code{'CC'} subontologies.
-#' @param organism Default is \code{'human'}, could be one of \code{'anopheles'}, \code{'arabidopsis'}, \code{'bovine'}, \code{'canine'},
-#' \code{'chicken'}, \code{'chimp'}, \code{'coelicolor'}, \code{'ecolik12'},
-#' \code{'ecsakai'}, \code{'fly'}, \code{'human'}, \code{'malaria'},
-#' \code{'mouse'}, \code{'pig'}, \code{'rat'}, \code{'rhesus'},
-#' \code{'worm'}, \code{'xenopus'}, \code{'yeast'} or \code{'zebrafish'}.
 #' @param measure Default is \code{'Resnik'}, could be one of \code{'Resnik'}, \code{'Lin'}, \code{'Rel'}, \code{'Jiang'} or \code{'Wang'}.
 #' @param combine Default is \code{'BMA'}, could be one of \code{'max'}, \code{'average'}, \code{'rcmax'} or \code{'BMA'}
 #' for combining semantic similarity scores of multiple GO terms associated with protein.
@@ -167,32 +158,31 @@ parGOSim = function (golist, type = c('go', 'gene'),
 #'
 #' require(GOSemSim)
 #' require(org.Hs.eg.db)
-#'
+#' 
 #' # by GO terms
 #' go1 = c("GO:0004022", "GO:0004024", "GO:0004023")
 #' go2 = c("GO:0009055", "GO:0020037")
-#' gsim1 = twoGOSim(go1, go2, type = 'go', ont = 'MF', measure = 'Wang')
+#' d = GOSemSim::godata('org.Hs.eg.db', ont = 'MF', computeIC = FALSE)
+#' gsim1 = twoGOSim(go1, go2, type = 'go', semData = d, measure = 'Wang')
 #' print(gsim1)
 #'
 #' # by Entrez gene id
 #' gene1 = '241'
 #' gene2 = '251'
-#' gsim2 = twoGOSim(gene1, gene2, type = 'gene', ont = 'BP', measure = 'Lin')
+#' d = GOSemSim::godata('org.Hs.eg.db', ont = 'MF', computeIC = TRUE)
+#' gsim2 = twoGOSim(gene1, gene2, type = 'gene', semData = d,  measure = 'Wang')
 #' print(gsim2)}
 
-twoGOSim = function (id1, id2, type = c('go', 'gene'),
-                     ont = 'MF', organism = 'human',
+twoGOSim = function (id1, id2, type = c('go', 'gene'), semData, 
                      measure = 'Resnik', combine = 'BMA') {
 
   if ( type == 'go' ) {
-    sim = GOSemSim::mgoSim(id1, id2,
-                           ont = ont, organism = organism,
+    sim = GOSemSim::mgoSim(id1, id2, semData = semData,
                            measure = measure, combine = combine)
   }
 
   if ( type == 'gene' ) {
-    sim = GOSemSim::geneSim(id1, id2,
-                            ont = ont, organism = organism,
+    sim = GOSemSim::geneSim(id1, id2, semData = semData,
                             measure = measure, combine = combine)$geneSim
   }
 
