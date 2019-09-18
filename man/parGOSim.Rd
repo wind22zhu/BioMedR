@@ -13,13 +13,7 @@ a character vector of GO terms or one Entrez Gene ID.}
 
 \item{type}{Input type of \code{golist}, \code{'go'} for GO Terms, \code{'gene'} for gene ID.}
 
-\item{ont}{Default is \code{'MF'}, could be one of \code{'MF'}, \code{'BP'}, or \code{'CC'} subontologies.}
-
-\item{organism}{Default is \code{'human'}, could be one of \code{'anopheles'}, \code{'arabidopsis'}, \code{'bovine'}, \code{'canine'},
-\code{'chicken'}, \code{'chimp'}, \code{'coelicolor'}, \code{'ecolik12'},
-\code{'ecsakai'}, \code{'fly'}, \code{'human'}, \code{'malaria'},
-\code{'mouse'}, \code{'pig'}, \code{'rat'}, \code{'rhesus'},
-\code{'worm'}, \code{'xenopus'}, \code{'yeast'} or \code{'zebrafish'}.}
+\item{semData}{GOSemSimDATA object}
 
 \item{measure}{Default is \code{'Resnik'}, could be one of \code{'Resnik'}, \code{'Lin'}, \code{'Rel'}, \code{'Jiang'} or \code{'Wang'}.}
 
@@ -49,12 +43,14 @@ go1 = c('GO:0005215', 'GO:0005488', 'GO:0005515', 'GO:0005625', 'GO:0005802', 'G
 go2 = c('GO:0005515', 'GO:0005634', 'GO:0005681', 'GO:0008380', 'GO:0031202')  # BCAS2
 go3 = c('GO:0003735', 'GO:0005622', 'GO:0005840', 'GO:0006412')  # PDE4DIP
 glist = list(go1, go2, go3)
-gsimmat1 = parGOSim(glist, type = 'go', ont = 'CC')
+d = godata('org.Hs.eg.db', ont="MF", computeIC = TRUE)
+gsimmat1 = parGOSim(glist, type = 'go', semData = d, measure = 'Wang')
 print(gsimmat1)
 
 # by Entrez gene id
 genelist = list(c('150', '151', '152', '1814', '1815', '1816'))
-gsimmat2 = parGOSim(genelist, type = 'gene')
+d = godata('org.Hs.eg.db', ont="CC", computeIC = TRUE)
+gsimmat2 = parGOSim(genelist, type = 'gene', semData = d)
 print(gsimmat2)}
 }
 \seealso{
