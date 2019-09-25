@@ -83,7 +83,7 @@ Code snippet 4: example for calculating interaction descriptors
   * Calculate more than ten types of molecular fingerprints, including E-state fingerprints, MACCS keys, etc., and parallelized chemical similarity search.
  
 
-#### 3) For DNA/RNA molecules, the BioMedR package could:
+#### 3) For DNA molecules, the BioMedR package could:
 
   * Calculate three nucleic acid composition features describing the local sequence information by means of kmers (subsequences of DNA sequences).
 
@@ -95,7 +95,7 @@ Code snippet 4: example for calculating interaction descriptors
 
 #### 4) 9 kinds of descriptor classes were provided for Proteochemometric (PCM) modeling derived by Principal Components Analysis, Factor Analysis and so on. 
 
-#### 5) By combining various types of descriptors for drugs, proteins and DNA/RNA in different methods, interaction descriptors representing protein-protein, compound-compound, DNA-DNA,  compound-DNA compound-protein and DNA-protein interactions could be conveniently generated with BioMedR, including:
+#### 5) By combining various types of descriptors for drugs, proteins and DNA in different methods, interaction descriptors representing protein-protein, compound-compound, DNA-DNA,  compound-DNA compound-protein and DNA-protein interactions could be conveniently generated with BioMedR, including:
 
   * Two types of compound-protein interaction (CPI) descriptors
   * Two types of compound-DNA interaction (CDI) descriptors 
@@ -117,7 +117,7 @@ Code snippet 4: example for calculating interaction descriptors
 The computed protein sequence descriptors, molecular descriptors/fingerprints, interaction descriptors and pairwise similarities are widely used in various research fields relevant to drug disvery, primarily bioinformatics, chemoinformatics, proteochemometrics and chemogenomics.
 
 ## Publication
-Jie Dong, Min-Feng Zhu, Dong-Sheng Cao, et al. BioMedR: An R/CRAN Package for Integrated Data Analysis Pipeline in Biomedical Study.*Briefings in Bioinformatics*, submitted.
+Jie Dong, Min-Feng Zhu, Dong-Sheng Cao, et al. BioMedR: An R/CRAN Package for Integrated Data Analysis Pipeline in Biomedical Study. *Briefings in Bioinformatics*, submitted.
 
 ## Contact
 
