@@ -123,9 +123,9 @@ Jie Dong, Min-Feng Zhu, Dong-Sheng Cao, et al. BioMedR: An R/CRAN Package for In
 
 The BioMedR package is developed by Computational Biology and Drug Design Group, Central South University, China.
   
-  * Minfeng Zhu <wind2zhu@163.com> 
+  * Dong Jie <biomed@csu.edu.cn> 
 
-  * Dong Jie <biomed@csu.edu.cn>
+  * Minfeng Zhu <wind2zhu@163.com>
 
   * Dongsheng Cao <oriental-cds@163.com>
 
