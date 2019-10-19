@@ -19,12 +19,16 @@ or
    ```
    install.packages('devtools')
    library(devtools)
+   install_github('wind22zhu/BioMedR')
+   ```
+if the installation invokes i386 arch, try to use:
+   ```
    install_github('wind22zhu/BioMedR', INSTALL_opts="--no-multiarch")
    ```
 To make the BioMedR package fully functional (especially the Open Babel and rjava related functionalities), we recommend the users some tips: 
 
-[>>Tips 1](http://projects.scbdd.com/si/install_biomedr_tips.pdf)
-[>>Tips 2](http://projects.scbdd.com/si/install_rjava.pdf)
+[>>Common installing tips](http://projects.scbdd.com/si/install_biomedr_tips.pdf)
+[>>How to install rjava](http://projects.scbdd.com/si/install_rjava.pdf)
 
 Several dependencies of the BioMedR package may require some system-level libraries, check the corresponding manuals of these packages for detailed installation guides.
 ## Examples
