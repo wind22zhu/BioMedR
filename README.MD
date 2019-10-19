@@ -13,7 +13,7 @@ The BioMedR package offers an R package for generating various molecular descrip
 To install the BioMedR package in R, simply type
 
    ```
-   install.package('BioMedR')
+   install.packages('BioMedR')
    ```
 or 
    ```
