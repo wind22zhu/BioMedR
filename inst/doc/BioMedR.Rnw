@@ -196,14 +196,14 @@ The functions in \pkg{BioMedR} named after \code{BMgetDrugMol...()} and \code{BM
 
 \subsection{Retrieve protein Sequences from Uniprot, KEGG, RCSBPDB}\addcontentsline{toc}{subsection}{2.2 Retrieve protein Sequences from Uniprot, KEGG, RCSBPDB}
 
-This function \code{BMgetProtseqUniprot()} get protein sequences from uniprot.org by protein ID(s), The input \code{ID} is a character vector specifying the protein ID(s). The returned sequences are stored in a list:
+This function \code{BMgetProtseqUniProt()} get protein sequences from uniprot.org by protein ID(s), The input \code{ID} is a character vector specifying the protein ID(s). The returned sequences are stored in a list:
 
 %
 \begin{CodeChunk}
 
 \begin{CodeInput}
 > ids = c('P00750', 'P00752')
-> protseq = BMgetProtSeqUniprot(ids)
+> protseq = BMgetProtSeqUniProt(ids)
 > print(protseq)
 \end{CodeInput}
 
